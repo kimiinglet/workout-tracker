@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+// const db = require("./models")
+
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -22,4 +24,3 @@ app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
   });
 
-  // Require the routes so the app knows what to load

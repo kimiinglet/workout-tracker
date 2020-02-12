@@ -1,4 +1,3 @@
-// Gotta link the front-end html pages. Need path module to navigate.
 const path = require("path");
 module.exports = function (app) {
     // When user lands on home page, return index.html.
