@@ -12,8 +12,7 @@ app.get("/api/workouts", function (req, res) {
         res.json(err)
     }) 
 })
-//(checked, pulls up inputed workouts)
-
+//(checked)
 
 //post create a new workout
 app.post("/api/workouts", (req, res) => {
@@ -25,7 +24,9 @@ app.post("/api/workouts", (req, res) => {
 
 //put/post to update workout
 app.put("/api/workouts/:_id", (req, res) => {
-    db.Workout.update({_id: req.params._id }, {$push: {body: req.body}}).then(function (dbWorkout) {
+    console.log(req.body);
+    db.Workout.find({ _id: req.params._id }).then(response => console.log(response));
+    db.Workout.update({_id: req.params._id }, {$push: {exercises: req.body}}).then(function (dbWorkout) {
         res.json(dbWorkout);
     }).catch(err => {
         res.json(err);
@@ -42,6 +43,8 @@ app.get("/api/workouts/range", function (req, res) {
     }) 
 })
 //(checked/shows up with /stats)
+
+
 
 }
 
