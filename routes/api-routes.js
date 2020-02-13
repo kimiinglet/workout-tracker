@@ -3,19 +3,23 @@ const db = require("../models");
 
 module.exports = function (app) {
 
- //getting the works from the workout.js    
+ //getting workout from the workout.js    
    app.get("/api/workouts", function (req, res) {
-        db.Workout.find({}).then(function (dbWorkout) {
-            res.json(dbWorkout);
-        }).catch(err => {
-            res.json(err);
+        db.Workout.find({}).then(dbWorkout => {
+            res.json(dbWorkout)
         })
+        .catch(err => {
+            res.json(err)
+        }) 
     })
+    //(check)
+
+
     // Get single workout by id.
     app.get("/api/workouts/:_id", function (req, res) {
         db.Workout.findOne({
             where: {
-                id: req.params._id
+                id: req.params.id
             }
         }).then(function (dbWorkout) {
             res.json(dbWorkout);
@@ -23,15 +27,18 @@ module.exports = function (app) {
             res.json(err);
         })
     })
+    //(null)
 
-    // Post/Create a new workout in the database.
-    app.post("/api/workouts", function (req, res) {
-        db.Workout.create(req.body).then(function (dbWorkout) {
-            res.json(dbWorkout);
-        }).catch(err => {
-            res.json(err);
+
+    // Crete new workout in database
+    app.post("/api/workouts", (req, res) => {
+        db.Workout.create(req.body).then(response => {
+            res.json(response);
         })
-    })
+        })
+
+
+
     // Update a workout in the database by id.
     app.put("/api/workouts/:_id", function (req, res) {
         db.Workout.update({_id: req.params._id }, req.body).then(function (dbWorkout) {
@@ -66,4 +73,5 @@ module.exports = function (app) {
         })
     })
 }
+
 

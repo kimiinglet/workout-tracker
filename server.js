@@ -6,13 +6,12 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-// const db = require("./models")
-
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// This tells the app to look inside the public folder for static files and to display anything called html at the root
 app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true, useFindAndModify: false });
