@@ -1,9 +1,6 @@
-# workout-tracker
+# Workout Tracker
 
-https://fitnes-trackher.herokuapp.com/
-
-# Unit 17 Nosql Homework: Workout Tracker
-
+I've created a workout tracker using Mongo database and Express.
 
 ## User Story
 
@@ -13,11 +10,8 @@ https://fitnes-trackher.herokuapp.com/
 
 A consumer will reach their fitness goals quicker when they track their workout progress.
 
-## Acceptance Criteria
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
-
-The user should be able to:
+# As a user you can:
 
   * Add exercises to a previous workout plan.
 
@@ -25,3 +19,9 @@ The user should be able to:
 
   * View multiple the combined weight of multiple exercises on the `stats` page.
 
+
+# Check out my work:
+
+  * Website: https://fitnes-trackher.herokuapp.com/
+
+  * GitHub: https://github.com/kimiinglet/workout-tracker
